@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: motd-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: motd
+  template:
+    metadata:
+      labels:
+        app: motd
+    spec:
+      containers:
+      - name: motd
+        image: bassiroud/motd-api:v1.1.1
+        ports:
+        - containerPort: 80
+        env:
+        - name: MESSAGE
+          value: "Hello World!"
+        - name: APP_PORT
+          value: "80"

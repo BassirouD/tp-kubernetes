@@ -16,8 +16,5 @@ COPY . .
 # Exposer le port sur lequel l'application Flask écoute
 EXPOSE 5000
 
-# Définir la variable d'environnement MESSAGE
-ENV MESSAGE="Hello World!"
-
 # Définir la commande par défaut pour démarrer l'application
-CMD ["python", "motd-api.py"]
+CMD ["python", "app.py"]

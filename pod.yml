@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: motd-pod
+  labels:
+    app: motd
+spec:
+  containers:
+  - name: motd
+    image: bassiroud/motd-api:v1.1.1
+    ports:
+      - containerPort: 80
+    env:
+      - name: MESSAGE
+        value: "HELLO WORD!!!!"
+      - name: APP_PORT
+        value: "80"

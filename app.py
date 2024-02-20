@@ -18,4 +18,4 @@ if __name__ == '__main__':
         print("MESSAGE environment variable is not set.")
     else:
         print("Starting motd-api with message:", message)
-        app.run(debug=True, port=int(port))
+        app.run(debug=True, port=int(port), host="0.0.0.0")
